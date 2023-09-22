@@ -1,0 +1,204 @@
+#logo {
+  position: fixed;
+  top: 30px; left: 30px;
+}
+#main {
+  overflow: hidden;
+  width: 100%; height: 100vh;
+  min-width: 1024px; min-height: 768px;
+  background-color: var(--sub-pinkBlack);
+  transition: background-color 0.5s;
+}
+
+/* palette */
+#palette {
+  float: left;
+  position: relative;
+  width: 60%; height: 100%;
+}
+
+.colorCircle {
+  position: absolute;
+  top: 50%; right: 0%;
+  transform: translate(0%, -50%);
+  width: 60%;
+  padding-bottom: 60%;
+  outline: 5px solid #fff;
+  border-radius: 50%;
+  transition: all 1s;
+}
+.colorCircle::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: -50%, -50%;
+  width: 95%;
+  padding-bottom: 95%;
+  outline: 3px dashed #fff;
+  border-radius: 50%;
+  animation: rotateCircle 5s linear infinite;
+}
+@keyframes rotateCircle {
+  0% {transform: translate(-50%, -50%) rotate(0deg);}
+  100% {transform: translate(-50%, -50%) rotate(-45deg);}
+}
+.colorCircle > li {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+}
+.colorCircle > li::after {
+  content: '';
+  display: block;
+  margin: 5px auto 31px;
+  width: 14px; height: 14px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.colorCircle > li.on {color: transparent;}
+.colorCircle > li:hover::after {transform: scale(1.2);}
+
+.onProductImg {
+  position: absolute;
+  top: 50%; right: 2.5%;
+  transform: translate(0%, -50%);
+  width: 55%;
+  padding-bottom: 55%;
+  background-image: url(img/pinkBlack.png);
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.colorCircle > li:nth-child(1) {top: 50%; right: 0; transform: translate(50%, -50%) rotate(90deg);}
+.colorCircle > li:nth-child(2) {bottom: 25%; right: 6.66%; transform: translate(50%, 50%) rotate(120deg);}
+.colorCircle > li:nth-child(3) {bottom: 6.66%; right: 25%; transform: translate(50%, 50%) rotate(150deg);}
+.colorCircle > li:nth-child(4) {bottom: -40px; left: 50%; transform: translateX(-50%) rotate(180deg);}
+.colorCircle > li:nth-child(5) {bottom: 6.66%; left: 25%; transform: translate(-50%, 50%) rotate(210deg);}
+.colorCircle > li:nth-child(6) {bottom: 25%; left: 6.66%; transform: translate(-50%, 50%) rotate(240deg);}
+.colorCircle > li:nth-child(7) {top: 50%; left: 0; transform: translate(-50%, -50%) rotate(270deg);}
+.colorCircle > li:nth-child(8) {top: 25%; left: 6.66%; transform: translate(-50%, -50%) rotate(300deg);}
+.colorCircle > li:nth-child(9) {top: 6.66%; left: 25%; transform: translate(-50%, -50%) rotate(330deg);}
+.colorCircle > li:nth-child(10) {top: 0; left: 50%; transform: translate(-50%, -50%) rotate(0deg);}
+.colorCircle > li:nth-child(11) {top: 6.66%; right: 25%; transform: translate(50%, -50%) rotate(30deg);}
+.colorCircle > li:nth-child(12) {top: 25%; right: 6.66%;transform: translate(50%, -50%) rotate(60deg);}
+
+.colorCircle > li:nth-child(1)::after {background: var(--main-pinkBlack);}
+.colorCircle > li:nth-child(2)::after {background: var(--main-blueBlack);}
+.colorCircle > li:nth-child(3)::after {background: var(--main-realRed);}
+.colorCircle > li:nth-child(4)::after {background: var(--main-creamButter);}
+.colorCircle > li:nth-child(5)::after {background: var(--main-oakBlue);}
+.colorCircle > li:nth-child(6)::after {background: var(--main-roseCognac);}
+.colorCircle > li:nth-child(7)::after {background: var(--main-secretBlack);}
+.colorCircle > li:nth-child(8)::after {background: var(--main-blueMountain);}
+.colorCircle > li:nth-child(9)::after {background: var(--main-multi);}
+.colorCircle > li:nth-child(10)::after {background: var(--main-yellow);}
+.colorCircle > li:nth-child(11)::after {background: var(--main-skyBlue);}
+.colorCircle > li:nth-child(12)::after {background: var(--main-camel);}
+
+/* txtArea */
+#txtArea {
+  position: relative;
+  float: right;
+  width: 35%; height: 100%;
+}
+.onColorName {
+  position: absolute;
+  top: 50%; left: 0;
+  transform: translateY(-50%);
+  height: 80px;
+  font-weight: 900;
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  transition: opacity 0.5s;
+}
+.onColorName > .colorShape {
+  position: absolute;
+  bottom: 0px;
+  width: 102%; height: 15px;
+  background-color: var(--main-pinkBlack);
+}
+
+/* more */
+.moreBtn {
+  position: absolute;
+  top: 50%; right: 30px;
+  width: 100px;
+  transform: translateY(-50%);
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.moreBtn:hover {
+  right: 35px;
+  opacity: 0.8;
+}
+
+.more {
+  position: absolute;
+  top: 0; right: -99%;
+  width: 100%; height: 100%;
+  background-color: #fff;
+  transition: right 1s;
+}
+.more::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: -60px;
+  transform: translateY(-50%);
+  display: block;
+  border: 30px solid transparent;
+  border-right-color: #fff;
+}
+.more > .closeBtn {
+  position: absolute;
+  top: 10px; right: 10px;
+  font-size: 30px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.more > .closeBtn:hover {opacity: 0.8;}
+.more > .onColorName {
+  top: 10%; left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  color: #333;
+  font-size: 30px;
+}
+
+.productList {
+  position: absolute;
+  top: 30%;
+  overflow: auto;
+  width: 100%; height: 70%;
+  padding: 10px;
+}
+.productList > li {
+  float: left;
+  width: 33.33%; height: 50%;
+  padding: 0 10px 10px;
+  font-size: 12px;
+}
+.productList > li .imgWrap {
+  width: 100%; height: 80%;
+  overflow: hidden;
+}
+.productList > li img {
+  position: relative;
+  top: 50%;  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  transition: all 0.3s;
+}
+.productList > li img:hover {opacity: 0.8;}
+
+.productList::-webkit-scrollbar {width: 3px;}
+.productList::-webkit-scrollbar-thumb {background-color: #999; border-radius: 3px;}
+.productList::-webkit-scrollbar-track {background-color: #eee;}

@@ -1,0 +1,58 @@
+:root {
+  /* color */
+  --main-pinkBlack: #e2a1c3;
+  --sub-pinkBlack: #333335;
+  --main-blueBlack: #a6bded;
+  --sub-blueBlack: #333335;
+  --main-realRed: #8b2b2e;
+  --sub-realRed: #e8b7ad;
+  --main-creamButter: #eede82;
+  --sub-creamButter: #c5a793;
+  --main-oakBlue: #2e4185;
+  --sub-oakBlue: #716e71;
+  --main-roseCognac: #d48c99;
+  --sub-roseCognac: #4d3032;
+  --main-secretBlack: #4d4c52;
+  --sub-secretBlack: #b0adae;
+  --main-blueMountain: #4b74d5;
+  --sub-blueMountain: #2c4b46;
+  --main-multi: linear-gradient(90deg, #e4cc59, #bb4042, #907ab1, #3d7968, #dfa7d1, #366595 );
+  --sub-multi: #bdc0d5;
+  --main-yellow: #eea95b;
+  --sub-yellow: #efdf86;
+  --main-skyBlue: #89aad3;
+  --sub-skyBlue: #bab9ca;
+  --main-camel: #a45541;
+  --sub-camel: #ba9b9e;
+}
+
+/* reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 15px;
+  color: #333;
+}
+a {
+  width: 100%; height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* clear fix */
+.clear::after {
+  content: '';
+  display: block;
+  clear: both;
+}
